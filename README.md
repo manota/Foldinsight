@@ -34,7 +34,7 @@ gh repo clone manota/Foldinsight
 
 Then, navigate to the Foldinsight directory:<br>
 0. (optional) Use `0_main_optimize_structure.py` to optimize protein structures.
-    
+
     | Argument         | Description                                                                                           | Default                               |
     | ---------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------- |
     | `--input-dir`    | Directory containing original PDB files to optimize                                                   | `./00ori_structure`                   |
