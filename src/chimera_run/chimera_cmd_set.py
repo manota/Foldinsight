@@ -1,0 +1,10 @@
+from chimera import runCommand
+runCommand("open ./01structure/p_0000.pdb")
+runCommand("open /tmp/Foldinsight_xxc_1rh8/functionality_cluster_min.bild")
+runCommand("open /tmp/Foldinsight_xxc_1rh8/functionality_cluster_max.bild")
+runCommand("set bg_color white")
+runCommand("set silhouette")
+runCommand("color #DC143C #0")
+runCommand("transparency 40 #0")
+runCommand("copy file ./results/result.png")
+runCommand("stop now")
