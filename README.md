@@ -56,26 +56,28 @@ Then, navigate to the Foldinsight directory:<br>
     | `--output-dir`     | Directory where Molecular Field outputs (`*.csv`, `*.feather`) will be written                  | `./MolecularFields` |
     | `--step-size`      | Lattice step size in Å for the energy grid box                                                  | `1.0`               |
     | `--leave-temp-dir` | If set, do **not** delete the temporary work directory and print its path at the end of the run | *disabled*          |
-    example:
+
+   example:
     ```
     python 1_main_mf.py --input-dir ./your_optimized_pdbs_dir \
       --output-dir ./your_molecular_fields_dir \
       --step-size 1.0
     ```
-2. Use `2_main_cv.py` to construct and evaluate prediction model using Molecular Fields.
+3. Use `2_main_cv.py` to construct and evaluate prediction model using Molecular Fields.
     
     | Argument         | Description                                                                                | Default                          |
     | ---------------- | ------------------------------------------------------------------------------------------ | -------------------------------- |
     | `--input-X-dir`  | Directory containing your Molecular Field feather files (`vdW.feather`, `coulomb.feather`) | `./MolecularFields`              |
     | `--input-Y-path` | Path to the CSV file with your observed Y-values (functionality)                           | `./MolecularFields/y_values.csv` |
     | `--output-dir`   | Directory where the plot (`observedVSpredicted.svg`) will be saved                         | `./results`                      |
-    example:
+
+   example:
     ```
     python 2_main_cv.py --input-X-dir ./your_molecular_fields_dir \
       --input-Y-path ./your_y_values.csv \
       --output-dir ./your_results_dir
     ```
-3. Use `3_main_visualize.py` to visualize important region of protein as functionality.
+5. Use `3_main_visualize.py` to visualize important region of protein as functionality.
     
     | Argument                    | Description                                                                                               | Default                               |
     | --------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------- |
@@ -85,7 +87,8 @@ Then, navigate to the Foldinsight directory:<br>
     | `--output-dir`              | Directory where the Chimera overlay script and final images will be written                               | `./results`                           |
     | `--chimera-path`            | Full path to the Chimera executable (auto-detected under `$HOME/*/UCSF*/bin/chimera` if not provided)     | First match under your home directory |
     | `--leave-temp-dir`          | If set, do **not** delete the temporary working directory and print its path at the end                   | (disabled)                            |
-    example:
+
+   example:
     ```
     python 3_main_visualize_important_regions.py \
       --input-X-dir ./MolecularFields \
